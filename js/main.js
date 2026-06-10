@@ -179,6 +179,10 @@ const hamburgerIcon = document.querySelector(".hamburger-icon");
 const menuLinks = document.querySelector(".menu-links");
 const yearMount = document.querySelector("#year");
 
+// about white mode
+const siteHeader = document.querySelector("[data-nav]");
+const aboutSection = document.querySelector("#about");
+
 const heroVideoA = document.querySelector("#heroVideoA");
 const heroVideoB = document.querySelector("#heroVideoB");
 const heroTimeline = document.querySelector("#heroTimeline");
@@ -495,6 +499,22 @@ function initMagneticItems() {
   });
 }
 
+//before about white mode
+// function init() {
+//   if (yearMount) {
+//     yearMount.textContent = new Date().getFullYear();
+//   }
+
+//   initHeroVideoSlider();
+//   renderFeatured();
+//   renderProjects();
+//   observeReveals();
+//   initFilters();
+//   initMobileMenu();
+//   initMagneticItems();
+// }
+
+//after about white mode
 function init() {
   if (yearMount) {
     yearMount.textContent = new Date().getFullYear();
@@ -507,6 +527,7 @@ function init() {
   initFilters();
   initMobileMenu();
   initMagneticItems();
+  initNavbarTheme();
 }
 
 function toggleHeroPlaybackMode() {
@@ -519,6 +540,25 @@ function toggleHeroPlaybackMode() {
   updateHeroTimeline(heroIsLocked ? 1 : 0);
 }
 
+// ABOUT White mode
+function updateNavbarTheme() {
+  if (!siteHeader || !aboutSection) return;
+
+  const headerRect = siteHeader.getBoundingClientRect();
+  const aboutRect = aboutSection.getBoundingClientRect();
+
+  const headerMiddle = headerRect.top + headerRect.height / 2;
+  const isOverAbout = headerMiddle >= aboutRect.top && headerMiddle <= aboutRect.bottom;
+
+  siteHeader.classList.toggle("is-over-light", isOverAbout);
+}
+
+function initNavbarTheme() {
+  updateNavbarTheme();
+
+  window.addEventListener("scroll", updateNavbarTheme, { passive: true });
+  window.addEventListener("resize", updateNavbarTheme);
+}
 
 
 init();

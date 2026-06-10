@@ -1052,3 +1052,75 @@ h1 {
     transform: translateX(100%);
   }
 }
+
+/* =====================================================
+   ABOUT SECTION WHITE MODE
+   ===================================================== */
+
+.about {
+  position: relative;
+  color: #050505;
+  isolation: isolate;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: #f4f1ea;
+  transform: translateX(-50%);
+}
+
+.about .kicker {
+  color: var(--accent);
+}
+
+.about-copy h2 {
+  color: #050505;
+}
+
+.about-copy p {
+  color: rgba(5, 5, 5, 0.68);
+}
+
+.about .skill-list li {
+  border-top-color: rgba(5, 5, 5, 0.18);
+  color: #050505;
+}
+
+/* =====================================================
+   NAVBAR DARK MODE WHEN OVER ABOUT
+   ===================================================== */
+
+.site-header.is-over-light {
+  background: rgba(244, 241, 234, 0.62);
+  border-color: rgba(5, 5, 5, 0.16);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+}
+
+.site-header.is-over-light .brand,
+.site-header.is-over-light .site-menu a {
+  color: #050505;
+}
+
+.site-header.is-over-light .hamburger-icon {
+  border-color: rgba(5, 5, 5, 0.18);
+  background: rgba(5, 5, 5, 0.08);
+}
+
+.site-header.is-over-light .hamburger-icon span {
+  background: #050505;
+}
+
+.site-header.is-over-light .menu-links {
+  background: rgba(10, 10, 10, 0.94);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.site-header.is-over-light .menu-links a {
+  color: var(--text);
+}
