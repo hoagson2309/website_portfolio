@@ -986,3 +986,67 @@ h1 {
 .hero-video-state[aria-pressed="true"] {
   color: var(--accent);
 }
+
+/* =====================================================
+   MOBILE ONLY BURGER MENU SLIDE EFFECT
+   ===================================================== */
+
+@media screen and (max-width: 900px) {
+  .menu-links li {
+    opacity: 0;
+    transform: translateX(32px);
+    transition:
+      opacity 0.28s ease,
+      transform 0.28s cubic-bezier(0.25, 1.4, 0.45, 1);
+  }
+
+  .menu-links.open li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu-links.open li:nth-child(1) {
+    transition-delay: 0.04s;
+  }
+
+  .menu-links.open li:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .menu-links.open li:nth-child(3) {
+    transition-delay: 0.16s;
+  }
+
+  .menu-links a {
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .menu-links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(215, 255, 79, 0.16),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+
+  .menu-links a:active,
+  .menu-links a:focus-visible {
+    color: var(--accent-2);
+    transform: translateX(18px) scale(0.97);
+  }
+
+  .menu-links a:active::before,
+  .menu-links a:focus-visible::before {
+    transform: translateX(100%);
+  }
+}
