@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Son Cao — Cinematic Portfolio</title>
+  <meta name="description" content="Editable cinematic portfolio template for video, design, and creative technology work." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-nav>
+    <a class="brand" href="#top" aria-label="Home">SON CAO</a>
+
+    <nav id="site-menu" class="site-menu" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- <section class="hero" aria-label="Intro">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+        <source src="assets/videos/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-fallback"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Portfolio / Motion / Code / Design</p>
+        <h1>Create worlds people can feel.</h1>
+        <p class="hero-copy">I build cinematic websites, interactive experiences, and visual stories with clean code and strong atmosphere.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">View work</a>
+          <a class="button ghost" href="#contact">Start a project</a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#work" aria-label="Scroll to work">Scroll</a>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-title">
+      <div class="section-label">Featured projects</div>
+      <h2 id="featured-title" class="visually-hidden">Featured projects</h2>
+      <div class="featured-grid" id="featuredProjects"></div>
+    </section> -->
+    <section class="hero" aria-label="Intro">
+      <div class="hero-slider" id="heroSlider" aria-hidden="true">
+        <video class="hero-video is-active" id="heroVideoA" autoplay muted loop playsinline preload="metadata"></video>
+        <video class="hero-video" id="heroVideoB" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+
+      <div class="hero-fallback"></div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Portfolio / Motion / Code / Design</p>
+        <h1>Du Ma.</h1>
+        <p class="hero-copy">Con Cac.</p>
+
+        <div class="hero-actions">
+          <a class="button" href="#work">View work</a>
+          <a class="button ghost" href="#contact">Start a project</a>
+        </div>
+
+        <div class="hero-video-controls" aria-label="Featured background videos">
+          <div class="hero-video-controls-head">
+            <span>Featured videos</span>
+            <button class="hero-video-state" id="heroVideoState" type="button" aria-pressed="false">
+              Auto playing
+            </button>
+          </div>
+
+          <div class="hero-timeline" id="heroTimeline"></div>
+        </div>
+      </div>
+
+      <!-- <a class="scroll-cue" href="#work" aria-label="Scroll to work">Scroll</a> -->
+    </section>
+
+    <section class="statement reveal" aria-label="Creative statement">
+      <p class="kicker">What I do</p>
+      <h2>I Do Shit Man.</p>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="section-head reveal">
+        <p class="kicker">All projects</p>
+        <h2 id="work-title">Hay vai lon</h2>
+      </div>
+
+      <div class="filters reveal" role="list" aria-label="Project filters">
+        <button class="filter is-active" data-filter="all">All Projects</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="video">Video</button>
+        <button class="filter" data-filter="design">Design</button>
+      </div>
+
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="about-media reveal">
+        <video autoplay muted loop playsinline poster="assets/images/about-poster.jpg">
+          <source src="assets/videos/about.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="about-copy reveal">
+        <p class="kicker">About</p>
+        <h2 id="about-title">tao ten son.</h2>
+        <p>may con ga biet gi.</p>
+        <ul class="skill-list">
+          <li>haha</li>
+          <li>haha &amp; haha</li>
+          <li>haha</li>
+          <li>haha</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal" aria-labelledby="contact-title">
+      <p class="kicker">Contact</p>
+      <h2 id="contact-title">goi cho anh di em</h2>
+      <a class="big-link" href="mailto:longtron@gmail.com">sondeptrai@gmail.com</a>
+      <div class="socials">
+        <a href="https://github.com/chson230905">GitHub</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="https://vimeo.com/">Vimeo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Son Cao</span>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
