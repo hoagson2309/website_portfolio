@@ -988,7 +988,7 @@ h1 {
 }
 
 /* =====================================================
-   MOBILE ONLY BURGER MENU SLIDE EFFECT
+   MOBILE ONLY BURGER MENU SLIDE + HOVER EFFECT
    ===================================================== */
 
 @media screen and (max-width: 900px) {
@@ -1039,12 +1039,14 @@ h1 {
     transition: transform 0.35s ease;
   }
 
+  .menu-links a:hover,
   .menu-links a:active,
   .menu-links a:focus-visible {
     color: var(--accent-2);
     transform: translateX(18px) scale(0.97);
   }
 
+  .menu-links a:hover::before,
   .menu-links a:active::before,
   .menu-links a:focus-visible::before {
     transform: translateX(100%);
