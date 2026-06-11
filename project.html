@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Son Cao</title>
+  <meta name="description" content="Project case study by Son Cao." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header class="site-header" data-nav>
+    <a class="brand" href="index.html#top" aria-label="Home">SON CAO</a>
+
+    <nav id="site-menu" class="site-menu" aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero-detail">
+      <p class="kicker" id="projectCategory">Project</p>
+      <h1 id="projectTitle">Loading project...</h1>
+      <p class="project-detail-subtitle" id="projectSubtitle"></p>
+    </section>
+
+    <section class="project-detail-media" id="projectMedia"></section>
+
+    <section class="project-detail-grid">
+      <aside class="project-detail-meta">
+        <div>
+          <p class="meta">Client</p>
+          <h3 id="projectClient"></h3>
+        </div>
+
+        <div>
+          <p class="meta">Year</p>
+          <h3 id="projectYear"></h3>
+        </div>
+
+        <div>
+          <p class="meta">Role</p>
+          <h3 id="projectRole"></h3>
+        </div>
+
+        <div>
+          <p class="meta">Tools</p>
+          <ul class="project-tools" id="projectTools"></ul>
+        </div>
+      </aside>
+
+      <article class="project-detail-copy">
+        <div>
+          <p class="kicker">Overview</p>
+          <p id="projectDescription"></p>
+        </div>
+
+        <div>
+          <p class="kicker">Challenge</p>
+          <p id="projectChallenge"></p>
+        </div>
+
+        <div>
+          <p class="kicker">Outcome</p>
+          <p id="projectOutcome"></p>
+        </div>
+
+        <div class="project-detail-actions">
+          <a class="button" href="index.html#work">Back to work</a>
+          <a class="button ghost" href="index.html#contact">Contact me</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Son Cao</span>
+    <a href="index.html#top">Back to home</a>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/project-page.js"></script>
+</body>
+</html>

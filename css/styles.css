@@ -1196,3 +1196,134 @@ h1 {
 .site-header.is-over-light .menu-links a {
   color: var(--text) !important;
 }
+
+/* =====================================================
+   PROJECT DETAIL PAGE
+   ===================================================== */
+
+.project-page {
+  min-height: 100vh;
+  padding-top: 140px;
+}
+
+.project-hero-detail {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 90px var(--pad) 60px;
+}
+
+.project-hero-detail h1 {
+  max-width: 1200px;
+  margin-top: 18px;
+  font-size: clamp(58px, 11vw, 170px);
+  line-height: 0.82;
+  letter-spacing: -0.09em;
+  text-transform: uppercase;
+}
+
+.project-detail-subtitle {
+  max-width: 760px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.4;
+}
+
+.project-detail-media {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad) 80px;
+}
+
+.project-detail-media video,
+.project-detail-media img {
+  width: 100%;
+  max-height: 78vh;
+  border-radius: var(--radius);
+  object-fit: cover;
+  background: var(--panel);
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 70px var(--pad) 120px;
+  border-top: 1px solid var(--line);
+}
+
+.project-detail-meta {
+  display: grid;
+  align-content: start;
+  gap: 28px;
+}
+
+.project-detail-meta h3 {
+  margin-top: 8px;
+  font-size: clamp(22px, 2.4vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.project-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 14px 0 0;
+  list-style: none;
+}
+
+.project-tools li {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-detail-copy {
+  display: grid;
+  gap: 42px;
+}
+
+.project-detail-copy p:not(.kicker) {
+  max-width: 850px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+}
+
+.project-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .project-page {
+    padding-top: 110px;
+  }
+
+  .project-hero-detail {
+    padding-top: 70px;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .project-detail-media video,
+  .project-detail-media img {
+    max-height: none;
+  }
+}
