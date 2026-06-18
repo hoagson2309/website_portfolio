@@ -383,7 +383,7 @@ h1 {
   max-width: 1160px;
   margin-top: 18px;
   font-size: clamp(64px, 13vw, 190px);
-  line-height: 0.78;
+  line-height: 1.05;
   letter-spacing: -0.09em;
   text-transform: uppercase;
 }
