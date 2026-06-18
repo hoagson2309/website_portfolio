@@ -472,7 +472,6 @@ function initHeroVideoSlider() {
 function initMagneticItems() {
   const magneticItems = document.querySelectorAll(`
     .button,
-    .filter,
     .socials a,
     .site-menu a
   `);
@@ -496,6 +495,29 @@ function initMagneticItems() {
 
     item.addEventListener("mouseup", () => {
       item.style.transform = "translate(0, 0)";
+    });
+  });
+
+  document.querySelectorAll(".filter").forEach(filter => {
+    filter.style.transition = "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease";
+
+    filter.addEventListener("mousemove", event => {
+      const rect = filter.getBoundingClientRect();
+      const x = (event.clientX - rect.left - rect.width / 2) * 0.15;
+      const y = (event.clientY - rect.top - rect.height / 2) * 0.15;
+      filter.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    filter.addEventListener("mouseleave", () => {
+      filter.style.transform = "translate(0, 0)";
+    });
+
+    filter.addEventListener("mousedown", () => {
+      filter.style.transform += " scale(0.95)";
+    });
+
+    filter.addEventListener("mouseup", () => {
+      filter.style.transform = "translate(0, 0)";
     });
   });
 
