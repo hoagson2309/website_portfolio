@@ -252,7 +252,9 @@ function renderProjects(filter = "all") {
 }
 
 function observeReveals() {
-  const reveals = document.querySelectorAll(".reveal:not(.is-observed)");
+  const reveals = document.querySelectorAll(
+    ".reveal:not(.is-observed), .reveal-left:not(.is-observed), .reveal-right:not(.is-observed), .reveal-scale:not(.is-observed), .project-row:not(.is-observed), .skill-list:not(.is-observed), .filters:not(.is-observed), .contact:not(.is-observed), .statement:not(.is-observed)"
+  );
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -261,7 +263,7 @@ function observeReveals() {
       entry.target.classList.add("is-visible");
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
   reveals.forEach(element => {
     element.classList.add("is-observed");
@@ -539,6 +541,22 @@ function toggleHeroPlaybackMode() {
 
   updateHeroTimeline(heroIsLocked ? 1 : 0);
 }
+
+// ABOUT parallax
+const aboutMedia = document.querySelector(".about-media");
+
+function updateAboutParallax() {
+  if (!aboutMedia || !aboutSection) return;
+  const rect = aboutSection.getBoundingClientRect();
+  const windowH = window.innerHeight;
+  if (rect.bottom < 0 || rect.top > windowH) return;
+
+  const progress = (windowH - rect.top) / (windowH + rect.height);
+  const shift = (progress - 0.5) * 40;
+  aboutMedia.style.transform = `translateY(${shift}px)`;
+}
+
+window.addEventListener("scroll", updateAboutParallax, { passive: true });
 
 // ABOUT White mode
 function updateNavbarTheme() {
