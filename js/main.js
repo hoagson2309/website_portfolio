@@ -473,7 +473,6 @@ function initMagneticItems() {
   const magneticItems = document.querySelectorAll(`
     .button,
     .filter,
-    .big-link,
     .socials a,
     .site-menu a
   `);
@@ -499,6 +498,22 @@ function initMagneticItems() {
       item.style.transform = "translate(0, 0)";
     });
   });
+
+  const bigLink = document.querySelector(".big-link");
+  if (bigLink) {
+    bigLink.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
+
+    bigLink.addEventListener("mousemove", event => {
+      const rect = bigLink.getBoundingClientRect();
+      const x = (event.clientX - rect.left - rect.width / 2) * 0.08;
+      const y = (event.clientY - rect.top - rect.height / 2) * 0.12;
+      bigLink.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    bigLink.addEventListener("mouseleave", () => {
+      bigLink.style.transform = "translate(0, 0)";
+    });
+  }
 }
 
 //before about white mode
