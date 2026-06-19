@@ -1,7 +1,7 @@
 // Background video
 window.PORTFOLIO_HERO_VIDEOS = [
   {
-    title: "Gesture Recognition",
+    title: "Hand Gesture",
     client: "AI Project",
     src: "assets/videos/hand_gesture.mp4",
     poster: "assets/images/project-3.png"
