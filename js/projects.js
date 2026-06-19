@@ -1,19 +1,19 @@
 // Background video
 window.PORTFOLIO_HERO_VIDEOS = [
   {
-    title: "Hand Gesture",
+    title: "Gesture Recognition",
     client: "AI Project",
     src: "assets/videos/hand_gesture.mp4",
     poster: "assets/images/project-3.png"
   },
   {
-    title: "Maze Robot",
+    title: "AutoMaze Robot",
     client: "Embedded Project",
     src: "assets/videos/auto_maze.mp4",
     poster: "assets/images/project-5.png"
   },
   {
-    title: "NVDA Stock",
+    title: "Stock Prediction",
     client: "AI Project",
     src: "assets/videos/nvda_stock.mp4",
     poster: "assets/images/project-1.png"
@@ -30,7 +30,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Personal Project",
     subtitle: "Predicting NVIDIA stock prices using machine learning models.",
     category: "ai",
-    year: "2025",
+    year: "2026",
     featured: false,
     mediaType: "image",
     media: "assets/images/project-1.png",
@@ -48,7 +48,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Personal Project",
     subtitle: "A robot that autonomously navigates through mazes.",
     category: "embedded",
-    year: "2025",
+    year: "2026",
     featured: false,
     mediaType: "image",
     media: "assets/images/project-5.png",
@@ -66,7 +66,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Personal Project",
     subtitle: "Predicting house prices using regression models.",
     category: "ai",
-    year: "2025",
+    year: "2026",
     featured: false,
     mediaType: "image",
     media: "assets/images/project-2.png",
@@ -84,7 +84,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Personal Project",
     subtitle: "Real-time hand gesture recognition using computer vision.",
     category: "ai",
-    year: "2025",
+    year: "2026",
     featured: false,
     mediaType: "image",
     media: "assets/images/project-3.png",
@@ -102,7 +102,7 @@ window.PORTFOLIO_PROJECTS = [
     client: "Personal Project",
     subtitle: "Real-time sensor data monitoring on embedded hardware.",
     category: "embedded",
-    year: "2025",
+    year: "2026",
     featured: false,
     mediaType: "image",
     media: "assets/images/project-4.png",
