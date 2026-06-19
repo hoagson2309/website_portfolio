@@ -47,7 +47,7 @@
 
 //   listMount.innerHTML = visibleProjects
 //     .map(project => `
-//       <a class="project-row reveal" href="${project.link}" data-category="${project.category}">
+//       <a class="project-row reveal" href="${project.link}" data-category="${project.category}" data-image="${project.media}">
 //         <div class="meta">${project.client}</div>
 //         <div>
 //           <h3>${project.title}</h3>
@@ -236,7 +236,7 @@ function renderProjects(filter = "all") {
 
   listMount.innerHTML = visibleProjects
     .map(project => `
-      <a class="project-row reveal" href="${project.link}" data-category="${project.category}">
+      <a class="project-row reveal" href="${project.link}" data-category="${project.category}" data-image="${project.media}">
         <div class="meta">${project.client}</div>
         <div>
           <h3>${project.title}</h3>
@@ -595,17 +595,31 @@ function updateAboutParallax() {
 
 window.addEventListener("scroll", updateAboutParallax, { passive: true });
 
-// ABOUT White mode
+// ABOUT White mode + dark navbar over hero/statement in light mode
+const heroSection = document.querySelector(".hero");
+const statementSection = document.querySelector(".statement");
+
 function updateNavbarTheme() {
   if (!siteHeader || !aboutSection) return;
 
   const headerRect = siteHeader.getBoundingClientRect();
-  const aboutRect = aboutSection.getBoundingClientRect();
-
   const headerMiddle = headerRect.top + headerRect.height / 2;
-  const isOverAbout = headerMiddle >= aboutRect.top && headerMiddle <= aboutRect.bottom;
 
+  const aboutRect = aboutSection.getBoundingClientRect();
+  const isOverAbout = headerMiddle >= aboutRect.top && headerMiddle <= aboutRect.bottom;
   siteHeader.classList.toggle("is-over-light", isOverAbout);
+
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  if (isLight) {
+    let isOverDark = false;
+    if (heroSection) {
+      const heroRect = heroSection.getBoundingClientRect();
+      if (headerMiddle >= heroRect.top && headerMiddle <= heroRect.bottom) isOverDark = true;
+    }
+    siteHeader.classList.toggle("is-over-dark", isOverDark);
+  } else {
+    siteHeader.classList.remove("is-over-dark");
+  }
 }
 
 function initNavbarTheme() {

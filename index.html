@@ -11,7 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="is-loading">
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <span class="preloader-name">Son Cao</span>
+    <div class="preloader-right">
+      <span class="preloader-counter" id="preloaderCounter">0</span>
+      <div class="preloader-bar">
+        <div class="preloader-fill" id="preloaderFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
+  <div class="cursor-media" id="cursorMedia">
+    <img id="cursorImage" src="" alt="" />
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+  </div>
+
   <div class="grain" aria-hidden="true"></div>
 
   <header class="site-header" data-nav>
@@ -23,18 +48,25 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="hamburger-menu">
-      <button class="hamburger-icon" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light mode">
+        <svg class="theme-icon theme-icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon theme-icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
 
-      <ul class="menu-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="hamburger-menu">
+        <button class="hamburger-icon" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="menu-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -93,7 +125,10 @@
         </div>
       </div>
 
-      <!-- <a class="scroll-cue" href="#work" aria-label="Scroll to work">Scroll</a> -->
+      <a class="scroll-cue" href="#about" aria-label="Scroll down">
+        <span class="scroll-cue-text">Scroll</span>
+        <span class="scroll-cue-line"></span>
+      </a>
     </section>
 
     <section class="statement reveal-scale" aria-label="Creative statement">
@@ -101,8 +136,39 @@
       <h2>I build intelligent systems and creative tech solutions.</h2>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI &amp; Machine Learning</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Embedded Systems</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Computer Vision</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Robotics</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Deep Learning</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Creative Technology</span>
+        <span class="marquee-sep">&diams;</span>
+      </div>
+      <div class="marquee-track">
+        <span>AI &amp; Machine Learning</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Embedded Systems</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Computer Vision</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Robotics</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Deep Learning</span>
+        <span class="marquee-sep">&diams;</span>
+        <span>Creative Technology</span>
+        <span class="marquee-sep">&diams;</span>
+      </div>
+    </div>
+
     <section id="about" class="about" aria-labelledby="about-title">
-      <div class="about-media reveal-left">
+      <div class="about-media">
         <img src="assets/images/son-photo.png" alt="Son Cao" />
       </div>
 
@@ -152,5 +218,8 @@
 
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/effects.js"></script>
 </body>
 </html>
