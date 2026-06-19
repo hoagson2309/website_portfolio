@@ -405,9 +405,9 @@ h1 {
   letter-spacing: -0.09em;
   text-transform: uppercase;
   text-shadow:
-    0 0 10px rgba(168, 85, 247, 0.4),
-    0 0 30px rgba(168, 85, 247, 0.2),
-    0 0 60px rgba(168, 85, 247, 0.1);
+    0 0 10px rgba(100, 180, 255, 0.5),
+    0 0 30px rgba(100, 180, 255, 0.3),
+    0 0 60px rgba(100, 180, 255, 0.15);
 }
 
 .hero-copy {
@@ -1451,13 +1451,20 @@ h1 {
 .filters.is-visible .filter:nth-child(3) { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.3s; }
 
 .statement h2 {
-  background: linear-gradient(90deg, var(--text), var(--muted));
-  background-size: 200% 100%;
+  background: linear-gradient(90deg, #ff6a00, #ffb800, #4ade80, #ff6a00);
+  background-size: 400% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shimmer-orange 4s ease infinite;
   transition: background-position 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+@keyframes shimmer-orange {
+  0% { background-position: 100% 0; }
+  50% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
 }
 
 .statement.is-visible h2,
